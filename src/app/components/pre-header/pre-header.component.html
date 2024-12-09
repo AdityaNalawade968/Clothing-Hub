@@ -1,0 +1,215 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <!-- Offcanvas Toggle Button -->
+            <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center" style="font-size: 20px;">
+                <strong>T-Verse</strong>
+                <span class="text-muted ms-0 d-inline">Clothing Hub</span>
+            </a>
+
+            <!-- Search Form -->
+            <form class="form-inline d-none d-lg-flex w-50 mx-auto">
+                <input class="form-control me-2 w-75" type="search" placeholder="Search for Products, Brands and More"
+                    aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+
+            <!-- Right Menu for Large Screens -->
+            <div class="" [ngSwitch]="ifUserLogIn">
+                <div class="d-none d-lg-flex align-items-center" style="text-decoration: none; font-size: 20px;"
+                    *ngSwitchCase="'default'">
+                    <a href="#" class="btn btn-primary text-white me-3" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        <i class="bi bi-person"></i> Login
+                    </a>
+                    <a [routerLink]="['/cart']" class="nav-link">
+                        <i class="bi bi-cart-check-fill"></i> Cart
+                    </a>
+                    <a [routerLink]="['/product-list']" class="nav-link">Best Sales</a>
+
+                    <!-- More Dropdown on Hover -->
+                    <div class="nav-item dropdown dropdown-hover">
+                        <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button"
+                            aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown" style="font-size: 15px;">
+                            <li><a class="dropdown-item" href="#">Favorite</a></li>
+                            <li><a class="dropdown-item" href="#"> My Account</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-none d-lg-flex align-items-center" style="text-decoration: none; font-size: 20px;"
+                    *ngSwitchCase="'user'">
+
+                    <!-- More Dropdown on Hover -->
+                    <div class="nav-item dropdown dropdown-hover">
+                        <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button"
+                            aria-expanded="false">
+                            <i class="bi bi-person-fill"></i> {{firstName}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown" style="font-size: 15px;">
+                            <li><a class="dropdown-item"> <i class="bi bi-person-fill"></i> My Account</a></li>
+                            <li><a class="dropdown-item"><i class="bi bi-gift"></i> Orders</a></li>
+                            <li><a class="dropdown-item"><i class="bi bi-heart"></i> Wishlist</a></li>
+                            <li><a class="dropdown-item" (click)="logout()"><i class="bi bi-box-arrow-right"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
+
+                    <a [routerLink]="['/cart']" class="nav-link">
+                        <i class="bi bi-cart-check-fill"></i> Cart
+                    </a>
+                    <a [routerLink]="['/product-list']" class="nav-link">Best Sales</a>
+
+                    <div class="nav-item dropdown dropdown-hover">
+                        <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" role="button"
+                            aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown" style="font-size: 15px;">
+                            <li><a class="dropdown-item"><i class="bi bi-bell"></i> Notification</a></li>
+                            <li><a class="dropdown-item"><i class="bi bi-headset"></i> 24x7 Customer Care</a></li>
+                            <li><a class="dropdown-item"><i class="bi bi-info-circle"></i> Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Offcanvas Menu for Mobile View -->
+<div class="offcanvas half-screen-offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+    aria-labelledby="offcanvasMenuLabel">
+    <div class=" offcanvas-header bg-info">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg></h5>
+            <label class="text-white" *ngIf="ifUserLogIn === 'default'">
+                Login & Signup
+              </label>
+              <label class="text-white" *ngIf="ifUserLogIn === 'user'">
+                {{ firstName }}
+              </label>
+              
+
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal " *ngIf="ifUserLogIn !== 'user'">
+            <i class="bi bi-collection-fill"></i> Login
+        </a>
+        <a href="#" class="nav-link"><i class="bi bi-collection-fill"></i> All Categories</a>
+        <a href="#" class="nav-link"><i class="bi bi-trophy-fill"></i> Offer Zone</a>
+        <a [routerLink]="['/product-list']" class="nav-link"><i class="bi bi-star-fill"></i> Best Sales</a>
+        <a href="#" class="nav-link"><i class="bi bi-bag-heart-fill"></i> My Orders</a>
+        <a [routerLink]="['/cart']" class="nav-link"><i class="bi bi-cart-check-fill"></i> My Cards</a>
+        <a href="#" class="nav-link"><i class="bi bi-heart-fill"></i> Favorite</a>
+        <a href="#" class="nav-link"><i class="bi bi-person-fill"></i> My Account</a>
+        <a href="#" class="nav-link"><i class="bi bi-info-circle-fill"></i> Help Center</a>
+        <a href="#" class="nav-link" *ngIf="ifUserLogIn === 'user'" (click)="logout()"><i class="bi bi-info-circle-fill" ></i> Log Out</a>
+    </div>
+</div>
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+
+                    <div class="mb-3">
+                        <label for="mobileNo" class="form-label">Mobile No.</label>
+                        <input type="number" class="form-control" id="mobileNo" formControlName="mobileNo"
+                            placeholder="Enter your number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" formControlName="password"
+                            placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Log In</button>
+                    <div class="col-md-12 text-center mt-3">
+                        <a data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            style="cursor: pointer; color: blue; text-decoration: underline;">
+                            Create account here
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Registration Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="fName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="fName" formControlName="fName"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mName" class="form-label">Middle Name</label>
+                            <input type="text" class="form-control" id="mName" formControlName="mName"
+                                placeholder="Enter Middle Name">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="lName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lName" formControlName="lName"
+                                placeholder="Enter Last Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email"
+                                placeholder="Enter Email">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" formControlName="password"
+                                placeholder="Enter your password">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="mobileNo" class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" id="mobileNo" formControlName="mobileNo"
+                                placeholder="Enter Mobile Number">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 mt-4">Register</button>
+
+                    <div class="col-md-12 text-center mt-3">
+                        <a data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"
+                            style="cursor: pointer;  color: blue; text-decoration: underline;">
+                            Already have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

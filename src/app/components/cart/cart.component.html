@@ -1,0 +1,38 @@
+<!-- ---- cart --- -->
+
+<div class="container cart my-4 mt-5">
+    <div class="row mb-3 mt-5 p-3">
+        <div class="col-md-2">
+            <button class="back-btn" (click)="goBack()">← Back</button>
+        </div>
+        <div class="col-md-10">
+            <h2 class="text-start ">Your Shopping Cart</h2>
+        </div>
+    </div>
+    <!-- Default message if no items are in the cart -->
+    <div *ngIf="cartItems1.length == 0" class="text-center alert alert-info">
+        <div class="text-center alert alert-info">
+            <p>Your cart is empty.</p>
+            <a *ngIf="ifUserLogIn=='default'" [routerLink]="['/']" class="btn btn-primary mt-2 w-100">Shop Now</a>
+            <a *ngIf="ifUserLogIn=='user'" [routerLink]="['/home']" class="btn btn-primary mt-2 w-100">Explore Now</a>
+        </div>
+    </div>
+
+    <!-- Cart items list -->
+    <div *ngIf="cartItems1.length > 0">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of cartItems1">
+                <div class="card mb-3">
+                    <img [src]="item.imageUrl" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ item.brand }}</h5>
+                        <h5 class="card-title"> {{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text"><strong>Price:</strong> {{ item.price }}</p>
+                        <button class="btn btn-danger btn-sm" (click)="removeFromCart(item.id)">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

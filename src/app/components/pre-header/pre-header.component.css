@@ -1,0 +1,25 @@
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar .form-control {
+    width: 100%;
+    max-width: 400px;
+}
+
+.navbar .btn-primary {
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Dropdown hover effect */
+.dropdown-hover:hover .dropdown-menu {
+    display: block;  
+}
+
+/* Optional: Adjust the dropdown menu styling */
+.dropdown-menu {
+    margin-top: 0;
+}

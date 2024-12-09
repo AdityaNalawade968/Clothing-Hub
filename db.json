@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": "797d",
+      "userId": "1",
+      "fname": "Aditya",
+      "mname": "Digambar",
+      "lname": "Nalawade",
+      "password": "222",
+      "email": "adityanalawde968@gmail.com"
+    },
+    {
+      "id": "f2da",
+      "date": "26,11,2024",
+      "password": "111",
+      "fName": "Aditya",
+      "mName": "Digambar",
+      "lName": "Nalawade",
+      "email": "adityanalawde968@gmail.com",
+      "mobileNo": "9552262161"
+    },
+    {
+      "id": "c6c6",
+      "date": "27,11,2024",
+      "password": "111",
+      "fName": "Lakhan",
+      "mName": "Dattaram",
+      "lName": "Shinde",
+      "email": "lakhan@123",
+      "mobileNo": "7507511213"
+    },
+    {
+      "id": "b559",
+      "date": "30,11,2024",
+      "password": "5",
+      "fName": "5",
+      "mName": "5",
+      "lName": "5",
+      "email": "55",
+      "mobileNo": "5"
+    }
+  ]
+}

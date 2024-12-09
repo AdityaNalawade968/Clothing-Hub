@@ -1,0 +1,183 @@
+<!-- Banner Section -->
+<!-- <div class="container mt-5 mb-0">
+    <div class="banner pt-3 text-center">
+        <h1>Hello, {{this.firstName}}</h1> 
+        <p><small>High Fashion, Low Prices! – Elevate Your Look Now!</small></p>
+    </div>
+</div> -->
+
+<!-- --------- category-menu   --> 
+<div class="container mt-5">
+    <div class="category-menu-wrapper">
+        <div class="category-menu" *ngFor="let item of premiumProducts;" [routerLink]="['/product-list']"
+            [queryParams]="{ order: item.id }">
+            <div class="category-menu-card">
+                <img src="{{item.image}}" class="card-img-top" alt="Grocery">
+                <p class="text">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -------- carousel ---- -->
+<div id="carouselExample" class="carousel slide mt-0" data-bs-ride="carousel">
+    <!-- Indicators/Dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <!-- Carousel Slides -->
+    <div class="carousel-inner ">
+        <div class="carousel-item active">
+            <img src="assets/images/banner/5.png" class="d-block w-100" alt="Slide 1">
+        </div>
+        <!-- <div class="carousel-item">
+            <img src="assets/images/banner/6.png" class="d-block w-100" alt="Slide 2">
+        </div> -->
+        <div class="carousel-item">
+            <img src="assets/images/banner/8.png" class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/banner/7.png" class="d-block w-100" alt="Slide 4">
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Festive Products Section -->
+<div class="container mt-2">
+    <div class="row mb-4 mt-3 bg-light">
+        <div class="col-md-4">
+            <div class="col-12 mb-5">
+                <h2 class="category-title">Famous Aura Apparel</h2>
+            </div>
+            <div class="row" [routerLink]="['/product-list']" [queryParams]="{ order: 1 }">
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoyT1.jpg" class="card-img-top" alt="Choppers & Slicers">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Choppers & Slicers</h5>
+                            <p class="text-success">Special offer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoyT3.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Water Bottles & Flasks</h5>
+                            <p class="text-success">Grab Now</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoyT5.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Water Bottles & Flasks</h5>
+                            <p class="text-success">Grab Now</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoyT4.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Water Bottles & Flasks</h5>
+                            <p class="text-success">Grab Now</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gifts for All Occasions Section -->
+        <div class="col-md-4">
+            <div class="col-12 mb-5">
+                <h2 class="category-title">Glimmers of Joy</h2>
+            </div>
+            <div class="row " [routerLink]="['/product-list']" [queryParams]="{ order: 2 }">
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoy6.jpg" class="card-img-top" alt="Casual">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Casual</h5>
+                            <p class="text-success">Big Savings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoy2.jpg" class="card-img-top" alt="Printed">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Printed</h5>
+                            <p class="text-success">Explore Now</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoy1.jpg" class="card-img-top" alt="Makeup Kit">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Short Sleeves</h5>
+                            <p class="text-success">Explore Now</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6 mb-3">
+                    <div class="card product-card">
+                        <img src="assets/images/gloumerOfJoy7.jpg" class="card-img-top" alt="Makeup Kit">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Design</h5>
+                            <p class="text-success">Explore Now</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-12">
+                <div class="promo-banner">
+                    <img src="assets/images/newArrivalsModal.png" alt="Promo Image" style="height: 60vh;width: 100%;">
+                    <div>
+                        <h2>Shop your fashion Needs</h2>
+                        <p>with Latest & Trendy Choices</p>
+                        <a href="#" class="btn btn-success">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Premium Products Section -->
+<!-- <div class="container-fluid" >
+    <h4>Premium Products</h4>
+    <div class="scroll-container"> 
+        <button class="scroll-btn left" (click)="scrollCards(-1)">&#10094;</button>
+        <div class="row card-row" [style.transform]="'translateX(' + translateX + 'px)'"
+            style="display: flex; flex-wrap: nowrap;">
+            <div class="col-md-2" *ngFor="let item of premiumProducts; let i = index">
+                <div class="card"   [routerLink]="['/product-list']"  [queryParams]="{ order:item.id}">
+                    <img src="{{item.image}}" class="card-img-top" alt="Product Image">
+                    <div class="card-body text-center">
+                        <p class="card-text">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn right" (click)="scrollCards(1)">&#10095;</button>
+    </div>
+</div> -->

@@ -1,0 +1,142 @@
+.main-image {
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .thumbnail-images img {
+    cursor: pointer;
+  }
+  
+  .btn-warning {
+    width: 150px;
+  }
+  
+  .btn-danger {
+    width: 150px;
+  }
+  .btn-success {
+    width: 150px;
+  }
+  
+  /* -------- back button ------- */
+
+  .back-btn {
+    margin: 10px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-btn:focus {
+    outline: none;
+  }
+  
+  @font-face {
+    font-family: "Exoct";
+    src: url("https://assets.codepen.io/1480814/films.EXH_____.ttf")
+}
+
+figure {
+    width: 80%;
+    aspect-ratio: 1;
+    margin: 70px 10px 0px;
+    padding: 5px 20px 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 100%;
+    cursor: pointer;
+    position: relative;
+    filter: drop-shadow(0 0 20px rgb(0 0 0/50%));
+}
+
+figure:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: top/cover;
+    transform-origin: bottom;
+    filter: brightness(.9);
+    transition: .5s;
+}
+
+img {
+    grid-area: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+    place-self: end center;
+    transition: .5s;
+}
+
+figcaption {
+    grid-area: 1/1;
+    width: calc(100% + 40px);
+    font-family: Exoct;
+    color: #fff;
+    font-size: min(32px, 5vmin);
+    text-align: center;
+    place-self: end center;
+    transform: perspective(500px) translateY(100%) rotateX(-90deg);
+    backface-visibility: hidden;
+    transform-origin: top;
+    background: #000;
+    transition: .5s;
+}
+
+figure:hover img {
+    width: 100%;
+    height: 60vh;
+    filter: contrast(1);
+}
+
+figure:hover::before {
+    filter: brightness(.3);
+    transform: perspective(500px) rotateX(60deg);
+}
+
+figure:hover figcaption {
+    transform: perspective(500px)translateY(100%) rotateX(-30deg);
+}
+
+.colorImages{
+  border-radius: 1px solid black;
+}
+.colorImages :hover{
+  cursor:pointer;
+}
+
+@media (max-width: 768px) {
+    figure {
+        width: 80%;
+        aspect-ratio: 1;
+        margin: 10px 10px 30px;
+        padding: 5px 20px 0;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: 100%;
+        cursor: pointer;
+        position: relative;
+        filter: drop-shadow(0 0 20px rgb(0 0 0/50%));
+    }
+
+    figure:hover img {
+    /* width: 10%; */
+    height: 45vh;
+    filter: contrast(1);
+}
+
+}

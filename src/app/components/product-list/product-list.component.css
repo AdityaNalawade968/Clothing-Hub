@@ -1,0 +1,100 @@
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar .form-control {
+    width: 100%;
+    max-width: 400px;
+}
+
+.navbar .btn-primary {
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Custom CSS to make the offcanvas take only half the screen width */
+.half-screen-offcanvas {
+    width: 75% !important; /* Set width to 50% */
+    max-width: 75% !important;
+}
+
+/* Dropdown hover effect */
+.dropdown-hover:hover .dropdown-menu {
+    display: block;  
+}
+
+/* Optional: Adjust the dropdown menu styling */
+.dropdown-menu {
+    margin-top: 0;
+}
+ 
+/* ----------- product-list  ------------ */
+
+.card {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top { 
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+  }
+  
+  .text-success {
+    font-weight: bold;
+  }
+  
+  .text-primary {
+    font-size: 0.85rem;
+  }
+  
+  /* -------- back button ------- */
+
+  .back-btn {
+    margin: 10px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-btn:focus {
+    outline: none;
+  }
+  

@@ -1,0 +1,392 @@
+<!-- --------- category-menu   -->
+<div class="container mt-5">
+  <div class="category-menu-wrapper">
+    <div class="category-menu" *ngFor="let item of premiumProducts;" [routerLink]="['/product-list']"
+      [queryParams]="{ order: item.id }">
+      <div class="category-menu-card">
+        <img src="{{item.image}}" class="card-img-top" alt="Grocery">
+        <p class="text">{{item.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------- admin panal sample code ------------ -->
+
+<!-- <style>
+    body {
+      background-color: #f9fafb;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar a {
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      color: #5a5af7;
+      font-weight: bold;
+    }
+    .status-badge {
+      padding: 0.4rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    .status-scheduled {
+      background-color: #eef6ff;
+      color: #007bff;
+    }
+    .status-active {
+      background-color: #e8f5e9;
+      color: #28a745;
+    }
+    .status-draft {
+      background-color: #fff3e0;
+      color: #ff9800;
+    }
+    .table-actions {
+      color: #5a5af7;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .table-actions:hover {
+      color: #303f9f;
+    }
+  </style>
+ 
+  <div class="container-fluid">
+    <div class="row"> 
+      <nav class="col-md-2 sidebar py-4">
+        <h4 class="text-center mb-4">Spodut</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-boxes me-2"></i>Products</a>
+            <ul class="nav flex-column ms-4">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Product List</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Categories</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-shopping-cart me-2"></i>Sales</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-users me-2"></i>Customers</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-chart-line me-2"></i>Analytics</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-bell me-2"></i>Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fas fa-cog me-2"></i>Settings</a>
+          </li>
+        </ul>
+      </nav> 
+      <main class="col-md-10">
+        <div class="p-4">
+          <h2>Products</h2>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <button class="btn btn-primary">+ Add Product</button>
+            <div>
+              <button class="btn btn-outline-secondary me-2">Filter</button>
+              <button class="btn btn-outline-secondary">See All</button>
+            </div>
+          </div>
+          <table class="table table-bordered table-hover bg-white">
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>T-Shirt</td>
+                <td>Women Clothes</td>
+                <td>$79.80</td>
+                <td>79</td>
+                <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                <td class="table-actions">Details</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Shirt</td>
+                <td>Men Clothes</td>
+                <td>$76.89</td>
+                <td>86</td>
+                <td><span class="status-badge status-active">Active</span></td>
+                <td class="table-actions">Details</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Pants</td>
+                <td>Kids Clothes</td>
+                <td>$86.65</td>
+                <td>74</td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td class="table-actions">Details</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>  -->
+
+<!-- -------- carousel ---- -->
+<div id="carouselExample" class="carousel slide mt-0" data-bs-ride="carousel">
+  <!-- Indicators/Dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <!-- Carousel Slides -->
+  <div class="carousel-inner ">
+    <div class="carousel-item active">
+      <img src="assets/images/banner/1.png" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/banner/2.png" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/banner/3.png" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/banner/4.png" class="d-block w-100" alt="Slide 4">
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Premium Products Section -->
+<!-- <div class="container mt-4">
+    <h4>Premium Products</h4>
+    <div class="scroll-container">
+        <button class="scroll-btn left" (click)="scrollCards(-1)">&#10094;</button>
+        <div class="row card-row" [style.transform]="'translateX(' + translateX + 'px)'"
+            style="display: flex; flex-wrap: nowrap;">
+            <div class="col-md-2" *ngFor="let item of premiumProducts; let i = index">
+                <div class="card" [routerLink]="['/product-list']" [queryParams]="{ order:item.id}">
+                    <img src="{{item.image}}" class="card-img-top" alt="Product Image">
+                    <div class="card-body text-center">
+                        <p class="card-text">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn right" (click)="scrollCards(1)">&#10095;</button>
+    </div>
+</div> -->
+
+
+<div class="container">
+  <!-- Available Items -->
+  <div class="list-container">
+    <h3>Available Items</h3>
+    <div
+      class="list"
+      cdkDropList
+      [cdkDropListData]="availableItems"
+      [cdkDropListConnectedTo]="['selectedList']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="list-item" *ngFor="let item of availableItems" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Items -->
+  <div class="list-container">
+    <h3>Selected Items</h3>
+    <div
+      class="list"
+      cdkDropList
+      id="selectedList"
+      [cdkDropListData]="selectedItems"
+      [cdkDropListConnectedTo]="['availableList']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="list-item" *ngFor="let item of selectedItems" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+  }
+
+  .list-container {
+    width: 40%;
+  }
+
+  .list {
+    border: 1px solid #ccc;
+    min-height: 200px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .list-item {
+    padding: 10px;
+    background: #e0f7fa;
+    border: 1px solid #00acc1;
+    border-radius: 4px;
+    cursor: move;
+    text-align: center;
+  }
+</style>
+
+
+<!-- Festive Products Section -->
+<div class="container-fluid my-4">
+  <div class="row mb-4 bg-light">
+    <div class="col-md-4">
+      <div class="col-12">
+        <h2 class="category-title">Famous Aura Apparel</h2>
+      </div>
+      <div class="row" [routerLink]="['/product-list']" [queryParams]="{ order: 1 }">
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoyT1.jpg" class="card-img-top" alt="Choppers & Slicers">
+            <div class="card-body text-center">
+              <h5 class="card-title">Choppers & Slicers</h5>
+              <p class="text-success">Special offer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoyT3.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+            <div class="card-body text-center">
+              <h5 class="card-title">Water Bottles & Flasks</h5>
+              <p class="text-success">Grab Now</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoyT5.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+            <div class="card-body text-center">
+              <h5 class="card-title">Water Bottles & Flasks</h5>
+              <p class="text-success">Grab Now</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoyT4.jpg" class="card-img-top" alt="Water Bottles & Flasks">
+            <div class="card-body text-center">
+              <h5 class="card-title">Water Bottles & Flasks</h5>
+              <p class="text-success">Grab Now</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gifts for All Occasions Section -->
+    <div class="col-md-4">
+      <div class="col-12">
+        <h2 class="category-title">Glimmers of Joy</h2>
+      </div>
+      <div class="row " [routerLink]="['/product-list']" [queryParams]="{ order: 2 }">
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoy6.jpg" class="card-img-top" alt="Casual">
+            <div class="card-body text-center">
+              <h5 class="card-title">Casual</h5>
+              <p class="text-success">Big Savings</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoy2.jpg" class="card-img-top" alt="Printed">
+            <div class="card-body text-center">
+              <h5 class="card-title">Printed</h5>
+              <p class="text-success">Explore Now</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoy1.jpg" class="card-img-top" alt="Makeup Kit">
+            <div class="card-body text-center">
+              <h5 class="card-title">Short Sleeves</h5>
+              <p class="text-success">Explore Now</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 mb-3">
+          <div class="card product-card">
+            <img src="assets/images/gloumerOfJoy7.jpg" class="card-img-top" alt="Makeup Kit">
+            <div class="card-body text-center">
+              <h5 class="card-title">Design</h5>
+              <p class="text-success">Explore Now</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="col-12">
+        <div class="promo-banner">
+          <img src="assets/images/newArrivalsModal.png" alt="Promo Image" style="height: 80vh;width: 100%;">
+          <div>
+            <h2>Shop your fashion Needs</h2>
+            <p>with Latest & Trendy Choices</p>
+            <a href="#" class="btn btn-success">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <h3>Where Style Meets Comfort – Elevate Your Wardrobe Today!</h3>
+</div>
+
+<!-- footerr -->
